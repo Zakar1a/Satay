@@ -3,11 +3,12 @@ package satay.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import satay.model.StorageProperties;
+import satay.prop.FileProperties;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -22,10 +23,11 @@ public class FileService {
     private final Path rootLocation;
 
     @Autowired
-    public FileService(StorageProperties properties) {
+    public FileService(FileProperties properties) {
         this.rootLocation = Paths.get(properties.getLocation());
     }
 
+    @Async
     public void store(MultipartFile file) {
         try {
             if (file.isEmpty()) {

@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
-import satay.model.StorageProperties;
+import satay.prop.FileProperties;
 import satay.service.FileService;
 
 @SpringBootApplication(scanBasePackages = { "satay" })
-@EnableConfigurationProperties(StorageProperties.class)
+@EnableConfigurationProperties(FileProperties.class)
 public class Application {
 
 	public static void main(String[] args) {

@@ -1,6 +1,6 @@
 satay\service\FileException.class
 satay\service\FileService.class
 satay\controller\Application.class
-satay\model\StorageProperties.class
 satay\service\StorageFileNotFoundException.class
+satay\prop\FileProperties.class
 satay\controller\FileController.class
